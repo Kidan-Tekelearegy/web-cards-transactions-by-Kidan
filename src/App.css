@@ -13,12 +13,11 @@
 }
 
 .card-btn {
-  
   padding: 5rem;
   border-radius: 2rem;
   margin: 6rem;
-
-  /* border: 2px dotted green; */
+  border: 0;
+  text-align: center;
 }
 
 .filter {
@@ -35,7 +34,6 @@
 }
 ::placeholder {
   padding: 1.5rem;
-  /* border: 2px dotted green; */
 }
 .transaction {
   display: flex;
@@ -46,11 +44,8 @@
   margin: 5rem;
   background-color: rgb(186, 184, 184);
   border-radius: 0.5rem;
- 
-  
-
 }
-.description{
+.description {
   width: 50vw;
   height: 40px;
   padding-left: 1.5rem;

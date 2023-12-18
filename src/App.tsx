@@ -1,18 +1,20 @@
+import "./App.css";
+import Cards from "./components/Cards";
+import Filter from "./components/Filter";
+import Transactions from "./components/Transactions";
 
-import './App.css';
-import Cards from './components/Cards';
-import Filter from './components/Filter';
-import Transactions from './components/Transactions';
+import WebCardContextProvider, {
+  webCardContextDataDefaultValue,
+} from "./context/context";
+import "./App.css";
 
 function App() {
   return (
-    <>
-
-     <Cards/>
-     <Filter/>
-     <Transactions/>
-
-    </>
+    <WebCardContextProvider value={webCardContextDataDefaultValue}>
+      <Cards />
+      <Filter />
+      <Transactions />
+    </WebCardContextProvider>
   );
 }
 
