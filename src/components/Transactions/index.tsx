@@ -1,25 +1,49 @@
-import { Transaction, getTransactions } from "../../ApiClient";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import {
+  Transaction,
+  getFilteredTransactions,
+  
+} from "../../ApiClient";
+import { WebCardContext } from "../../context/context";
 
 const Transactions = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
+  const { selectedCard, amountFilter } = useContext(WebCardContext);
+
+  // https://github.com/developerasun/pawcon/issues/48
+
   useEffect(() => {
-    const getTransactionsFromApi = async () => {
-      setTransactions(await getTransactions("lkmfkl-mlfkm-dlkfm"));
+    const getCardsFromApi = async () => {
+      if (selectedCard) {
+        setTransactions(
+          await getFilteredTransactions(selectedCard, amountFilter)
+        );
+      }
     };
-    getTransactionsFromApi();
-  }, []);
+    getCardsFromApi();
+  }, [selectedCard, amountFilter]);
 
   return (
     <>
-      <h1>Transactions</h1>
-      {transactions.map((transaction) => {
+      {transactions.map((transaction: Transaction) => (
         <>
-          <p>{transaction.description}</p>
-          <p>{transaction.amount}</p>
-        </>;
-      })}
+          {/* <p>{transaction.id}</p> */}
+          <div
+            className="transaction"
+            style={{
+              backgroundColor:
+                selectedCard === "elek-n3lk-4m3lk4"
+                  ? "lightBlue"
+                  : "lightgray",
+            }}
+          >
+            <p className="description">{transaction.description}</p>
+            <p className="amount">{transaction.amount}</p>
+          </div>
+        </>
+      ))}
+      
     </>
   );
 };

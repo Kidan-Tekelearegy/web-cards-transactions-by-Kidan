@@ -1,0 +1,57 @@
+/* Universal pre-defined style */
+
+*,
+*::before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Root  pre-defined style*/
+:root {
+  font-size: calc(1rem + 0.5vw, 1.5rem);
+}
+
+.card-btn {
+  
+  padding: 5rem;
+  border-radius: 2rem;
+  margin: 6rem;
+
+  /* border: 2px dotted green; */
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+.amount {
+  border-radius: 0.5rem;
+  width: 50vw;
+  height: 40px;
+}
+::placeholder {
+  padding: 1.5rem;
+  /* border: 2px dotted green; */
+}
+.transaction {
+  display: flex;
+  /* border: 2px dotted green; */
+  gap: 30rem;
+  width: 50%;
+  padding-top: 1.5rem;
+  margin: 5rem;
+  background-color: rgb(186, 184, 184);
+  border-radius: 0.5rem;
+ 
+  
+
+}
+.description{
+  width: 50vw;
+  height: 40px;
+  padding-left: 1.5rem;
+}
