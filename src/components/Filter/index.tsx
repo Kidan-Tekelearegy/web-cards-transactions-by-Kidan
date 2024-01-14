@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext } from "react";
-import { WebCardContext } from "../../context/context";
+import { WebCardContext } from "../../contexts/WebCardContext";
 
 const Filter = () => {
 

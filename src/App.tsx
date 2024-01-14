@@ -5,7 +5,7 @@ import Transactions from "./components/Transactions";
 
 import WebCardContextProvider, {
   webCardContextDataDefaultValue,
-} from "./context/context";
+} from "./contexts/WebCardContext";
 import "./App.css";
 
 function App() {

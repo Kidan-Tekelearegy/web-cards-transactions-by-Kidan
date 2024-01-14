@@ -1,6 +1,8 @@
 import { useEffect, useState, useContext } from "react";
 import { Card, getCards } from "../../ApiClient";
-import { WebCardContext } from "../../context/context";
+import { WebCardContext } from "../../contexts/WebCardContext";
+
+import getBackGroundColor from "../../utilities";
 
 const Cards = () => {
     const [cards, setCards] = useState<Card[]>([]);
@@ -19,8 +21,7 @@ const Cards = () => {
           <button
             key={card.id}
             style={{
-              backgroundColor:
-                card.id === "elek-n3lk-4m3lk4" ? "lightBlue" : "lightgray",
+              backgroundColor: getBackGroundColor(card.id)
             }}
             className="card-btn"
             onClick={() => updateSelectedCard(card.id)}

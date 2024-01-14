@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-//https://wanago.io/2020/09/28/react-context-api-hooks-typescript/
+
 export interface WebCardContextData {
   selectedCard: string;
   amountFilter: number;
